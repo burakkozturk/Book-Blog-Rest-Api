@@ -20,7 +20,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String categoryName;
+    private String title;
 
     @OneToMany(mappedBy = "category")
     private Set<Book> book;
