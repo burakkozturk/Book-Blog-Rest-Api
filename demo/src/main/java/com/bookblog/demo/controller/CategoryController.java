@@ -33,9 +33,9 @@ public class CategoryController {
     }
 
     @PostMapping("")
-    public ResponseEntity<Category> saveCategory(@RequestBody CategoryDto categoryDto){
-        Category category = new Category();
-        return ResponseEntity.ok(category);
+    public ResponseEntity<Category> saveCategory(@RequestBody CategoryDto categoryDto) {
+        Category savedCategory = categoryService.saveCategory(categoryDto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedCategory);
     }
 
     @PutMapping("/{categoryId}")
